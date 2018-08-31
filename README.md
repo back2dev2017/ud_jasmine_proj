@@ -44,10 +44,10 @@ As this particular page is for a Udacity Nano degree program, no contributions w
 ## Dependencies
 
 Quite a lot of dependencies exist in this app. Specifically note the following pulled from web locations:
-	+ http://fonts.googleapis.com/css?family=Roboto:400,100,300,700
-	+ http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
-	+ http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js
-	+ http://google.com/jsapi
+	http://fonts.googleapis.com/css?family=Roboto:400,100,300,700 </br>
+	http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js </br>
+	http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js </br>
+	http://google.com/jsapi </br>
 
 Jasmine 2.1.2 is used in this app. It appears to be deprecated (it seems the oldest version is 2.6 on the Jasmine site). But all the files
 required for Jasmine to function are included in the folder structure of this app (i.e. the /jasmine/ subfolder)
