@@ -91,8 +91,6 @@ describe('Feed Reader Testing Project', function() {
         // its .innterHTML: it should be different
         let feedcontent = "";
 
-        //   in the previous test suite, the "id 0" feed was loaded and results stored in feedContent (the .innerHTML). So 
-        // here, load "id 1" feed, and compare its .innterHTML; it should be different
         beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
@@ -113,6 +111,13 @@ describe('Feed Reader Testing Project', function() {
             let newFeedContent = feed_div.innerHTML;
             expect(newFeedContent).not.toBe(feedContent);
             done();
+        });
+
+        // restore the page to the initial load condition - aka 1st feed in allFeeds array loaded
+        afterAll(function(done) {
+            loadFeed(0, function() {
+                done();
+            });
         });
     });
 
