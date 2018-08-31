@@ -115,4 +115,21 @@ describe('Feed Reader Testing Project', function() {
             done();
         });
     });
+
+    describe('Feed Array bounds', function() {
+        // make sure feed loading checks for allFeed array bounds
+        it('causes an error if feed ID is out of bounds (e.g. even if just 1 larger than array)', function() {
+            // recall arrays are 0-based, so a 4th item is referenced by array[3]. So using array[4] is out of bounds
+            let aLittleTooBig = allFeeds.length;
+            expect(function () {
+                loadFeed(aLittleTooBig);
+            }).toThrow();
+        });
+        it('causes an error if feed ID is a negative number (e.g. -1)', function() {
+            // expect(loadFeed(10000)).toThrow(new Error('function loadFeed: Requested Feed ID is not within allFeed array bounds'));
+            expect(function () {
+                loadFeed(-1);
+            }).toThrow();
+        });
+    });
 });

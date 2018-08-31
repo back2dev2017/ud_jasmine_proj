@@ -32,7 +32,11 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
-     var feedUrl = allFeeds[id].url,
+        if (id < 0 || id > allFeeds.length - 1) {
+            throw new Error('function loadFeed: Requested Feed ID is not within allFeed array bounds');
+        }
+
+        var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 
      $.ajax({
