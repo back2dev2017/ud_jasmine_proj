@@ -23,7 +23,7 @@ Open the index.html file to run the project.
 
 Running the application will also show the results of the Jasmine tests at the bottom of the page. To remove the Jasmine testing display info,
 comment out the Jasmine references in the <head></head> of index.html, and also comment out the "<script src="jasmine/spec/feedreader.js"></script>"
-at the bottom of the <body></body>.
+at the bottom of the "body" element.
 
 Note that the RSS feeds to view can be altered by changing data in the allFeeds[] array (in app.js). Ensure any feed added has a name (to display in the menu) and
 a URL for actual navigation.
