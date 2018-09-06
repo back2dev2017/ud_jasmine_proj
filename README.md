@@ -16,14 +16,24 @@ This is a simple feed reader page that allows organizing an selecting which feed
 
 ## Instructions
 
-The file list is included in the [section](#file-list) at the bottom of this readme
+To run the project, copy all the files listed in the [File List](#file-list) section (ensure folder structure is retained). Optionally, can
+clone project from git-hub: https://github.com/back2dev2017/ud_jasmine_proj.git.
 
-The key to setting up the app is to set values in the allFeeds[] array (in app.js). Ensure any feed added has a name (to display in the menu) and
-a URL for actual navigation.
+Open the index.html file to run the project.
 
 Running the application will also show the results of the Jasmine tests at the bottom of the page. To remove the Jasmine testing display info,
 comment out the Jasmine references in the <head></head> of index.html, and also comment out the "<script src="jasmine/spec/feedreader.js"></script>"
 at the bottom of the <body></body>.
+
+Note that the RSS feeds to view can be altered by changing data in the allFeeds[] array (in app.js). Ensure any feed added has a name (to display in the menu) and
+a URL for actual navigation.
+
+To see Jasmine detected failures (note: when changing code to check these, make sure you can put code back to its original state):
+ - add/modify entries in the allFeeds[] array and create blank or missing "URL" or "name" values
+ - comment out "$('body').addClass('menu-hidden');" (around line 104) in the app.js file
+ - put in a fake value (e.g. a non-existent website) on the URL value for the 1st array element ('Udacity Blog')
+ - in app.js change the allFeeds array and duplicate the same URL for the 1st two allFeed[] items.
+ - modify app.js and comment out the check for array bounds in loadFeed() (starting around line 38)
 
 ## Code Notes
 

@@ -13,7 +13,7 @@ describe('Feed Reader Testing Project', function() {
         /* This is our first test - it tests to make sure that the allFeeds variable has been defined and that it is not
          * empty. Experiment with this before you get started on the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the page?   */
-        it('shows all feeds (in the allFeeds array) are defined', function() {
+        it('shows the allFeeds data (the allFeeds array) is defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -24,7 +24,7 @@ describe('Feed Reader Testing Project', function() {
         it('shows each feed has a URL and the URL is not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBe("");
+                expect(feed.url.length).not.toBe(0);
             });
         });
 
@@ -33,7 +33,7 @@ describe('Feed Reader Testing Project', function() {
         it('shows each feed has a name and it is not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBe("");
+                expect(feed.name.length).not.toBe(0);
             });
         });
     });
@@ -76,8 +76,8 @@ describe('Feed Reader Testing Project', function() {
         it('upon initial load has at least a single .entry element in the .feed container', function(done) {
             let feed_div = document.getElementById('whyNoIdHere');
             feedContent = feed_div.innerHTML;
-            expect(feed_div.childElementCount).toBeDefined();
-            expect(feed_div.childElementCount).not.toBe(0);
+            expect(feed_div.children.length).toBeDefined();
+            expect(feed_div.children.length > 0).toBe(true);
             done();
         });
     });
@@ -128,13 +128,13 @@ describe('Feed Reader Testing Project', function() {
             let aLittleTooBig = allFeeds.length;
             expect(function () {
                 loadFeed(aLittleTooBig);
-            }).toThrow();
+            }).toThrow(new Error('function loadFeed: Requested Feed ID is not within allFeed[] bounds'));
         });
         it('causes an error if feed ID is a negative number (e.g. -1)', function() {
             // expect(loadFeed(10000)).toThrow(new Error('function loadFeed: Requested Feed ID is not within allFeed array bounds'));
             expect(function () {
                 loadFeed(-1);
-            }).toThrow();
+            }).toThrow(new Error('function loadFeed: Requested Feed ID is not within allFeed[] bounds'));
         });
     });
 });

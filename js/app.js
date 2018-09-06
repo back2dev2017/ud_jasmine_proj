@@ -6,18 +6,24 @@
 var allFeeds = [
     {
         name: 'Udacity Blog',
+        // name: '',
         url: 'http://blog.udacity.com/feed'
+        // url: 'http://bogus-site.ugh'
     }, {
         name: 'CSS Tricks',
         url: 'http://feeds.feedburner.com/CssTricks'
+        // url: 'http://blog.udacity.com/feed'
     }, {
         name: 'HTML5 Rocks',
         url: 'http://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+
     }
 ];
+
+
 
 /* This function starts up our application. The Google Feed Reader API is loaded asynchonously and will then call this
  * function when the API is loaded. */
@@ -33,7 +39,7 @@ function init() {
  */
  function loadFeed(id, cb) {
         if (id < 0 || id > allFeeds.length - 1) {
-            throw new Error('function loadFeed: Requested Feed ID is not within allFeed array bounds');
+            throw new Error('function loadFeed: Requested Feed ID is not within allFeed[] bounds');
         }
 
         var feedUrl = allFeeds[id].url,
