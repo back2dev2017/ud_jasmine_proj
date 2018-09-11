@@ -74,10 +74,12 @@ describe('Feed Reader Testing Project', function() {
         });
         
         it('upon initial load has at least a single .entry element in the .feed container', function(done) {
-            let feed_div = document.getElementById('whyNoIdHere');
-            feedContent = feed_div.innerHTML;
-            expect(feed_div.children.length).toBeDefined();
-            expect(feed_div.children.length > 0).toBe(true);
+            // make sure the div that has the class "feed" exists
+            let feed_content = $('.feed');
+            expect(feed_content).toBeDefined();
+            // do a selection of all '.entry' class elements inside '.feed' - and make sure there is more than 0
+            let entrycount = $('.feed .entry').length;
+            expect(entrycount).not.toBe(0);
             done();
         });
     });
